@@ -1,0 +1,7 @@
+:{$PORT:8080} {
+	root * /srv
+	encode gzip zstd
+	@static path /styles.css /data.js /assets/*
+	header @static Cache-Control "public, max-age=86400"
+	file_server
+}
